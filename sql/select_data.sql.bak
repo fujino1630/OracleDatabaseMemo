@@ -1,0 +1,67 @@
+-- ①全体検索
+SELECT
+    suji,
+    label,
+    mark,
+    color,
+    is_num
+FROM
+    trump_cards
+;
+
+
+-- ②マーク別件数検索
+SELECT
+    mark,
+    COUNT(*) AS count
+FROM
+    trump_cards
+GROUP BY
+    mark
+;
+
+
+-- ③色別件数検索
+SELECT
+    color,
+    COUNT(*) AS count
+FROM
+    trump_cards
+GROUP BY
+    color
+;
+
+
+
+-- ④絵札or数字件数検索
+SELECT
+    CASE is_num
+        WHEN 1 THEN 'YES'
+        WHEN 0 THEN 'NO'
+        ELSE '-'
+    END AS NumberOrPicture,
+    COUNT(*) AS count
+FROM
+    trump_cards
+GROUP BY
+    NumberOrPicture
+;
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+-- 合計行を加える方法
+
+-- ②マーク別件数検索
+SELECT
+    -- GROUPING関数は、集計行なら1、それ以外なら0を返す
+    DECODE(GROUPING(mark), 1, '合計', mark) AS mark,
+    COUNT(*) AS count
+FROM
+    trump_cards
+GROUP BY
+    ROLLUP(mark)
+;
+
+
+
