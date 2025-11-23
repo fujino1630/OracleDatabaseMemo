@@ -52,5 +52,5 @@
 |50|11|Diamond|Red|J|false|
 |51|12|Diamond|Red|Q|false|
 |52|13|Diamond|Red|K|false|
-|53|||Black|JOKER||
-|54|||Red|JOKER||
+|53|-1|JK|Black|JOKER|false|
+|54|-1|JK|Red|JOKER|false|

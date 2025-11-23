@@ -58,5 +58,5 @@ VALUES
     ('12','Q','Diamond','Red','0'),
     ('13','K','Diamond','Red','0'),
     -- ジョーカーカードデータ（数字とマークはなし）
-    (NULL, 'JOKER', NULL,'Black',NULL),
-    (NULL, 'JOKER', NULL,'Red', NULL);
+    (-1, 'JOKER', 'JK','Black',0),
+    (-1, 'JOKER', 'JK','Red',0);
